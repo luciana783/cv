@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luciana Heredia — Curriculum Vitae</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1a1a18;
+      --ink-mid: #444441;
+      --ink-light: #888780;
+      --accent: #0F6E56;
+      --accent-light: #E1F5EE;
+      --border: #D3D1C7;
+      --bg: #FAF9F6;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: 'EB Garamond', Georgia, serif;
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 4rem 3rem 5rem;
+    }
+
+    /* HEADER */
+    header {
+      border-bottom: 1.5px solid var(--ink);
+      padding-bottom: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+
+    .title-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 4px 10px;
+      border-radius: 3px;
+    }
+
+    .contact-row {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1.8rem;
+      font-size: 14px;
+      color: var(--ink-mid);
+      font-family: 'DM Mono', monospace;
+    }
+
+    .contact-row a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .contact-row a:hover { text-decoration: underline; }
+
+    /* BIO */
+    .bio {
+      font-size: 16.5px;
+      color: var(--ink-mid);
+      font-style: italic;
+      border-left: 3px solid var(--accent);
+      padding-left: 1.2rem;
+      margin-bottom: 2.8rem;
+      line-height: 1.75;
+    }
+
+    /* SECTIONS */
+    section { margin-bottom: 2.6rem; }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 1.1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    /* EDUCATION ENTRIES */
+    .entry { margin-bottom: 1.5rem; }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+
+    .entry-title {
+      font-weight: 600;
+      font-size: 17px;
+    }
+
+    .entry-year {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--ink-light);
+      white-space: nowrap;
+    }
+
+    .entry-inst {
+      font-style: italic;
+      color: var(--ink-mid);
+      font-size: 15.5px;
+    }
+
+    .entry-detail {
+      font-size: 15px;
+      color: var(--ink-mid);
+      margin-top: 0.25rem;
+    }
+
+    .entry-detail span { color: var(--ink-light); }
+
+    /* RESEARCH */
+    .pub {
+      padding: 1rem 1.2rem;
+      border: 0.5px solid var(--border);
+      border-radius: 6px;
+      background: var(--white);
+    }
+
+    .pub-title {
+      font-weight: 600;
+      font-size: 16.5px;
+    }
+
+    .pub-meta {
+      font-size: 14px;
+      color: var(--ink-mid);
+      margin-top: 0.2rem;
+    }
+
+    .pub-id {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--ink-light);
+      margin-top: 0.4rem;
+    }
+
+    .pub-id a { color: var(--accent); text-decoration: none; }
+    .pub-id a:hover { text-decoration: underline; }
+
+    /* EXPERTISE */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      font-size: 13.5px;
+      padding: 4px 12px;
+      border: 0.5px solid var(--border);
+      border-radius: 20px;
+      color: var(--ink-mid);
+      background: var(--white);
+    }
+
+    /* LINKS */
+    .links-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 0.5px solid var(--border);
+      border-radius: 6px;
+      background: var(--white);
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 14px;
+      transition: border-color 0.15s;
+    }
+    .link-card:hover { border-color: var(--accent); color: var(--accent); }
+    .link-card svg { flex-shrink: 0; }
+
+    /* FOOTER */
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 0.5px solid var(--border);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--ink-light);
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 2rem 1.4rem 3rem; }
+      h1 { font-size: 2rem; }
+      .header-top { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media print {
+      body { background: white; }
+      .page { padding: 2cm; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="header-top">
+      <h1>Luciana Heredia</h1>
+      <span class="title-tag">Physicist · RF/SDR Engineer</span>
+    </div>
+    <div class="contact-row">
+      <span>Córdoba, Argentina</span>
+      <a href="mailto:luciana783@gmail.com">luciana783@gmail.com</a>
+      <a href="https://www.linkedin.com/in/luciana-heredia-5b030794/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/luciana783" target="_blank">GitHub</a>
+    </div>
+  </header>
+
+  <p class="bio">
+    Physicist and RF/SDR engineer with over a decade of experience in electromagnetic simulation, antenna design, radar systems, and signal processing. Based at VENG S.A. (Córdoba, Argentina), a defense technology company, she develops technical solutions for clients including INVAP S.A.U. and the Argentine Navy. Her work spans multi-band antenna arrays, passive bistatic radar, software-defined radio (ADRV9361), and emerging research in RF biomedical applications and precision agriculture sensing.
+  </p>
+
+  <section>
+    <div class="section-label">Research &amp; Publications</div>
+    <div class="pub">
+      <div class="pub-title">Búsqueda de Planemos en la Nube Oscura Lynds 1495</div>
+      <div class="pub-meta">Undergraduate thesis · Universidad Nacional de Córdoba · 2011</div>
+      <div class="pub-meta" style="margin-top:4px">Directora: Dra. Mercedes Gómez</div>
+      <div class="pub-id">OAI: <a href="https://rdu.unc.edu.ar/handle/11086/71" target="_blank">oai:rdu.unc.edu.ar:11086/71</a></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Academic Background</div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Maestría en Sistemas de Radar e Instrumentación</span>
+        <span class="entry-year">2012 – 2014</span>
+      </div>
+      <div class="entry-inst">Universidad Nacional de Córdoba · Instituto Universitario Aeronáutico</div>
+      <div class="entry-detail"><span>Thesis:</span> Compensación de atenuación de señal en radares polarimétricos de banda C</div>
+      <div class="entry-detail"><span>Directors:</span> Mgter. Gustavo Lazarte · Dr. Isidoro Vaquila</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Especialización en Sistemas de Radar e Instrumentación</span>
+        <span class="entry-year">2012 – 2013</span>
+      </div>
+      <div class="entry-inst">Universidad Nacional de Córdoba · Instituto Universitario Aeronáutico</div>
+      <div class="entry-detail"><span>Final work:</span> Generador de datos de radar meteorológico doble polarimétrico en banda C</div>
+      <div class="entry-detail"><span>Director:</span> Mgter. Gustavo Lazarte</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Licenciatura en Astronomía</span>
+        <span class="entry-year">2003 – 2011</span>
+      </div>
+      <div class="entry-inst">Facultad de Matemática, Astronomía y Física · Universidad Nacional de Córdoba</div>
+      <div class="entry-detail"><span>Thesis:</span> Búsqueda de Planemos en la Nube Oscura Lynds 1495</div>
+      <div class="entry-detail"><span>Directora:</span> Dra. Mercedes Gómez</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Despachante de Aeronaves</span>
+        <span class="entry-year">2019</span>
+      </div>
+      <div class="entry-inst">Instituto de Capacitación Aeronáutica · Córdoba, Argentina</div>
+      <div class="entry-detail">10-month accredited professional course</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Technical Expertise</div>
+    <div class="tags">
+      <span class="tag">Antenna Design &amp; HFSS Simulation</span>
+      <span class="tag">Radar Systems (Bistatic, SFCW, Polarimetric)</span>
+      <span class="tag">Software-Defined Radio (ADRV9361)</span>
+      <span class="tag">Signal Processing &amp; DSP</span>
+      <span class="tag">RF Biomedical Applications</span>
+      <span class="tag">Electromagnetics &amp; EM Simulation</span>
+      <span class="tag">Python · Flask · Signal Pipelines</span>
+      <span class="tag">Spectroradiometry &amp; Optics Lab</span>
+      <span class="tag">Precision Agriculture Sensing</span>
+      <span class="tag">AoA Estimation &amp; Interferometry</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Online Profiles</div>
+    <div class="links-row">
+      <a class="link-card" href="https://www.linkedin.com/in/luciana-heredia-5b030794/" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="3"/><line x1="8" y1="11" x2="8" y2="17"/><line x1="8" y1="7" x2="8" y2="8"/><line x1="12" y1="17" x2="12" y2="11"/><path d="M16 17v-4a2 2 0 0 0-4 0"/></svg>
+        LinkedIn
+      </a>
+      <a class="link-card" href="https://github.com/luciana783" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        GitHub
+      </a>
+      <a class="link-card" href="https://rdu.unc.edu.ar/handle/11086/71" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        UNC Repository
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    Last updated June 2026 · Luciana Heredia · Córdoba, Argentina
+  </footer>
+
+</div>
+</body>
+</html>
